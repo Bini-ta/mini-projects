@@ -28,7 +28,7 @@ private ModelAndView newModelAndView(String string) {
 
 return"redirect:/";
 }
-else@
+@else
 return"redirect:/login";
 }	
 
