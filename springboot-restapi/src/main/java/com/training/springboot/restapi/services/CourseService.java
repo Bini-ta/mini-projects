@@ -8,6 +8,8 @@ public interface CourseService {
 	
 	public List<course> getCourses();
 
-	public Course getCourse(long courseId);
+	public course getCourse(long courseId);
+	public course addCourse(course course);
+	public course updateCourse(course course);
 
 }

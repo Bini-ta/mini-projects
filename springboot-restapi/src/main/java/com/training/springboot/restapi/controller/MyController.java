@@ -1,11 +1,11 @@
 package com.training.springboot.restapi.controller;
-
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.training.springboot.restapi.entities.course;
@@ -15,25 +15,30 @@ import com.training.springboot.restapi.services.CourseService;
 public class MyController {
 	@Autowired
 	private CourseService courseService;
+	private Object CourseService;
 	@GetMapping("/home")
 	public String home() {
 		return"welcome to courses application";
 	}
-	//get the courses
+	//get the single courses
 	@GetMapping("/courses")
 	public List<course>getCourses()
 	{
 return this.courseService.getCourses();
     }
-	@GetMapping("/course/{courseId}")
-	public CourseService getCourse(@PathVariable String courseId)
+	@GetMapping("/courses/{courseId}")
+	
+	public course getCourse(@PathVariable String courseId)
 	{
 		return this.courseService.getCourse(Long.parseLong(courseId));
 	}
 	
-	
-	
-	
-	
-	
+	@PostMapping("/courses")
+	public course addCourse(@RequestBody course course) {
+		return this.CourseService.addCourse(course);
+	}
+		@PutMapping("/courses")
+		public CourseService updateCourseService (@RequestBody course course) {
+			return this.courseService.updateCourse(course);
+		}
 }

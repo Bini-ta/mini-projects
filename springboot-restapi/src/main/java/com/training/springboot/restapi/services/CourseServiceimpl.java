@@ -26,7 +26,7 @@ public class CourseServiceimpl implements CourseService {
 	@Override
 	public course getCourse (long courseId) {
 		course c =null;
-		for(course course2:list)
+		for(course course:list)
 		{
 			if(course.getId()==courseId)
 			{
@@ -36,6 +36,18 @@ public class CourseServiceimpl implements CourseService {
 		}
 		// TODO Auto-generated method stub
 		return c;
+	}
+
+	@Override
+	public course addCourse(course course) {
+		list.add(course);
+		return course;
+	}
+
+	@Override
+	public course updateCourse(course course) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
