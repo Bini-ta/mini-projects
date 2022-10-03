@@ -46,8 +46,15 @@ public class CourseServiceimpl implements CourseService {
 
 	@Override
 	public course updateCourse(course course) {
+		CourseService.UpdateCourse(course);
+		return course;
+	}
+
+	@Override
+	public course deleteCourse(course course) {
+		CourseService.deleteCourse(course);
 		// TODO Auto-generated method stub
-		return null;
+		return course;
 	}
 
 }
