@@ -9,3 +9,4 @@ import com.example.student.Crud.domain.student;
 public interface studentRepository extends JpaRepository<student, Long>  {
 
 }
+
