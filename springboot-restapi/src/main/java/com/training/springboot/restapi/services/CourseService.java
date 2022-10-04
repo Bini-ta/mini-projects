@@ -2,14 +2,16 @@ package com.training.springboot.restapi.services;
 
 import java.util.List;
 
-import com.training.springboot.restapi.entities.course;
+import com.training.springboot.restapi.entities.Course;
+
 
 public interface CourseService {
 	
-	public List<course> getCourses();
+	public List<Course> getCourses();
 
-	public course getCourse(long courseId);
-	public course addCourse(course course);
-	public course updateCourse(course course);
-	public course deleteCourse(course course); 
-	}
+	public Course getCourse(long courseId);
+	public  Course addCourse(Course course);
+	public  Course updateCourse(Course course);
+	public Course deleteCourse(int id);
+	} 
+	

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.training.springboot.restapi.entities.Course;
 import com.training.springboot.restapi.entities.course;
 import com.training.springboot.restapi.services.CourseService;
 
@@ -26,29 +27,30 @@ public class MyController {
 	
 	//get the single courses
 	@GetMapping("/courses")
-	public List<course>getCourses()
+	public List<Course>getCourses()
 	{
 return this.courseService.getCourses();
     }
 	
 	@GetMapping("/courses/{courseId}")
-	public course getCourse(@PathVariable String courseId)
-	{
-		return this.courseService.getCourse(Long.parseLong(courseId));}
-	//add course
-	@PostMapping("/courses")
-     public course addCourse(@RequestBody course course) {
-		return this.CourseService.addCourse(course);
+	public Course getCourse(@PathVariable long courseId){
+		return this.courseService.getCourse(courseId);
 		}
-	//update course using put request
-		@PutMapping("/update")
-		public course updateCourseService (@RequestBody course course) {
-			Return this.courseService.UpdateCourse(course);
+
+	@PostMapping("/courses")                               
+     public Course addCourse(@RequestBody Course course) {
+		return this.courseService.addCourse(course);
+}
+	
+	@PutMapping("/update")
+		public Course updateCourse (@RequestBody Course course) {
+			return this.courseService.updateCourse(course);
 	}
 	//delete the course
 		@DeleteMapping("/deletecourses/{courseId}")
-		public void deleteCourse(@PathVariable int id) {
-			CourseService.deleteCourse(id);		
+		public Course deleteCourse(@PathVariable int id) {
+			return this.courseService.deleteCourse(id);	
+			
 		}
 		
 			}
