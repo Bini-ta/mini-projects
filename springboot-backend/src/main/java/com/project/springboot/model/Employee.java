@@ -20,12 +20,43 @@ public class Employee {
 
     @Column(name = "First_Name", nullable = false)   //If you do not provide @Column annotation
                                                     // Jpa will take default property name (firstName)
-    private String firstName;
+    private Object firstName;
 
     @Column(name = "Last_Name", nullable = false)
     private String lastName;
 
     @Column(name = "Email_Id", nullable = false)
     private String emailId;
+
+	public Object getFirstName() {
+		// TODO Auto-generated method stub
+		return firstName;
+	}
+
+	public Object getLastName() {
+		// TODO Auto-generated method stub
+		return lastName;
+	}
+
+	public Object getEmailId() {
+		// TODO Auto-generated method stub
+		return emailId;
+	}
+
+	public void setFirstName1(Object object) {
+		// TODO Auto-generated method stub
+		this.firstName = object;
+	}
+
+	public void setLastName(Object lastName2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setEmailId(Object emailId2) {
+		// TODO Auto-generated method stub
+		
+	
+	}
 
 }
